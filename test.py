@@ -1,5 +1,5 @@
 import unittest
-from sample import Vehicle, Motorcycle
+from main import Vehicle, Motorcycle
 
 class TestVehicleProgram(unittest.TestCase):
     def test_vehicle_count(self):
