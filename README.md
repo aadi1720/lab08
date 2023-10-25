@@ -17,7 +17,7 @@
 
 1. Make a copy of this Github repository on your computer using the `git` and `clone` commands that you will input to the terminal. The commands take a URL as a parameter to specify where it can get a copy of the repository. You can find the URL by clicking on the green *Clone or download* button at the top right part of this page. Copy the URL and replace the example text shown below. Note that `username` should be replaced with your own Github username. When you hit <kbd>Enter</kbd> it will ask you to provide your Github username and token. Once done, you will have a copy of the repository on your computer.
     ```
-    git clone https://github.com/CSUF-CPSC223P-STMAY-2023S/lab08-username.git
+    git clone https://github.com/CSUF-CPSC223P-NILAYJAIN12/Lab-08.git
     ```
 1. Navigate into the new directory using the command line. Note that `username` should be replaced with your own Github username.  As a shortcut, you can type the first few letters of the folder name and press <kbd>Tab</kbd> so that it auto completes the folder name for you.
 
@@ -26,182 +26,51 @@
      ```
      
 ## Program Instructions
-1. Write a Python program that performs as a Tuffy Titan Student/Faculty List which contains a list of students and a list of faculty.
-1. Create a `people` module to meet the following requirements:
-     1. Create a file named `people.py`.
-          1. Define a class named `Person`.  
-               1. Define a member function named `__init__` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a first name string as a positional parameter.
-                    1. Take a last name string as a positional parameter.
-                    1. Set a member variable `firstname` equal to the first name parameter.
-                    1. Set a member variable `lastname` equal to the last name parameter.
-          1. Define a class named `Faculty` that inherits from `Person`  
-               1. Define a member function named `__init__` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a first name as a positional parameter.
-                    1. Take a last name as a positional parameter.
-                    1. Take a department as a positional parameter.
-                    1. Call the `Person` `__init__` member function passing the first and last name.
-                    1. Set a member variable `department` equal to the department parameter.
-          1. Define a class named `Student` that inherits from `Person`  
-               1. Define a member function named `__init__` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a first name string as a positional parameter.
-                    1. Take a last name string as a positional parameter.
-                    1. Call the `Person` `__init__` member function passing the first and last name.
-               1. Define a member function named `set_class` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a class year string as a positional parameter.
-                    1. Set a member variable `classyear` equal to the class year parameter.
-               1. Define a member function named `set_major` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a major string as a positional parameter.
-                    1. Set a member variable `major` equal to the major parameter.
-               1. Define a member function named `set_advisor` to meet the following requirements:
-                    1. Take a self object as a positional parameter.
-                    1. Take a `Faculty` object as a positional parameter.
-                    1. Set a member variable `advisor` equal to the faculty parameter.
-1. Create a `main` driver program to meet the following requirements:
-     1. Create a file named `main.py`.
-     1. Import the `Faculty` and `Student` classes from the `people` module.
-     2. Declare a variable to hold a list of faculty.
-     3. Declare a variable to hold a list of students.
-     6. Implement a menu within a loop with following choices:
-          1. Add faculty
-          2. Print faculty
-          3. Add student
-          4. Print student
-          9. Exit the program
-     7. Prompt the user for the menu choice.
-     8. The Add faculty function should prompt the user for the first name, last name, and department, then instantiate a `Faculty` object and append the object to the faculty list.
-     8. The Add student function should prompt the user for the first name, last name, class year, major, and the record number of the faculty advisor, then instantiate a `Student` object and append the object to the student list.
-1. Run the program using the command below and repeat the steps above until you are satisfied your program output meets the above requirements.
 
-    ```
-    python3 -m main
-    ```
+You are required to create a Python program that demonstrates your understanding of the following concepts: Classes and Objects, Class variables and Instance variables, Inheritance, Multiple Inheritance, Private and Protected variables, and Generators in Python.
 
+**NOTE: You are provided with a file 'main.py' where you have to write your code. Do not modify the provided driver code.**
 
-1. Typical input and output for the program:
-     ```
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
+**Task 1: Classes and Objects**
 
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
+1. Create a class named **Vehicle** with the following attributes:
+- make (a string representing the vehicle's make)
+- model (a string representing the vehicle's model)
+- year (an integer representing the manufacturing year)
 
-     Enter menu choice: 2
+**Task 2: Class Variables and Instance Variables**
+1. Add a class variable **vehicle_count** and initialize to 0 to the Vehicle class to keep track of the total number of vehicle instances created.
+2. Create a method named **display_vehicle_count()** in the Vehicle class to display the vehicle_count.
 
-     ======================= FACLUTY =======================
-     Record  Name                  Department
-     ======  ====================  =========================
-     0       Susan Barua           Computer Science         
-     1       Hosssen Moini         Mechanical Engineering   
-     2       Huda Munjy            Civil Engineering        
-     3       Mostafa Shiva         Electrical Engineering   
+**Task 3: Inheritance**
+1. Create a subclass named **Car** that inherits from the **Vehicle** class.
+2. Add a new attribute **fuel_type** to the Car class (e.g., "Gasoline", "Electric", etc.).
 
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
+**Task 4: Multiple Inheritance**
+1. Create another class named **Motorcycle** that inherits from the **Vehicle** class.
+2. Add a new attribute **engine_capacity** to the Motorcycle class (an integer representing the engine capacity in cc).
 
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
+**Task 5: Private and Protected Variables**
+1. Modify the Motorcycle class to include a private variable **__vin** and initialize it with **None** and a protected variable **_color** that is initialized with the help of the **set_color(self, color)** function.
+2. Create a method named **get_vin(self)** in the Motorcycle class to return the **__vin** value.
+3. Create a method named **set_vin(self, vin)** in the Motorcycle class to set the **__vin** attribute.
 
-     Enter menu choice: 4
+**Task 6: Generators in Python**
+1. Create a generator function named **count_up_to()** that takes an integer parameter **‘n’** and generates numbers from 1 to that parameter.
+2. Create another generator function named **fibonacci** that generates the Fibonacci sequence up to a specified limit **‘limit’**.
 
-     ===================================== STUDENTS ======================================
-     Name                  Class      Major                      Advisor
-     ====================  ========   =========================  =========================
-     Erica Perine          Freshman   Civil Engineering          Huda Munjy          
-     Jonathan Rosso        Senior     Computer Science           Susan Barua         
-     Samuel Carter         Sophomore  Environmental Engineering  Huda Munjy          
-     Stephanie Dalaba      Senior     Electrical Engineering     Mostafa Shiva       
-     Chuck Pirards         Junior     Mechanical Engineering     Hosssen Moini       
+**Sample Output:**
+```
+Total vehicles: 3
+Motorcycle color: Red
+Motorcycle VIN: None
+Counting up to 5:
+1 2 3 4 5
+Fibonacci sequence up to 50:
+0 1 1 2 3 5 8 13 21 34 Total vehicles: 5
+```
 
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
-
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
-
-     Enter menu choice: 1
-
-     Enter first name: George
-     Enter last name: Kiran
-     Enter department: Computer Engineering
-
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
-
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
-
-     Enter menu choice: 2
-
-     ======================= FACLUTY =======================
-     Record  Name                  Department
-     ======  ====================  =========================
-     0       Susan Barua           Computer Science         
-     1       Hosssen Moini         Mechanical Engineering   
-     2       Huda Munjy            Civil Engineering        
-     3       Mostafa Shiva         Electrical Engineering   
-     4       George Kiran          Computer Engineering     
-
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
-
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
-
-     Enter menu choice: 3
-
-     Enter first name: Becky
-     Enter last name: Hanna
-     Enter class year: Senior
-     Enter major: Computer Science
-     Enter faculty advisor: 4
-
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
-
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
-
-     Enter menu choice: 4
-
-     ===================================== STUDENTS ======================================
-     Name                  Class      Major                      Advisor
-     ====================  =========  =========================  =========================
-     Erica Perine          Freshman   Civil Engineering          Huda Munjy          
-     Jonathan Rosso        Senior     Computer Science           Susan Barua         
-     Samuel Carter         Sophomore  Environmental Engineering  Huda Munjy          
-     Stephanie Dalaba      Senior     Electrical Engineering     Mostafa Shiva       
-     Chuck Pirards         Junior     Mechanical Engineering     Hosssen Moini       
-     Becky Hanna           Senior     Computer Science           George Kiran        
-
-           *** TUFFY TITAN STUDENT/FACULTY MAIN MENU
-
-     1. Add faculty
-     2. Print faculty
-     3. Add student
-     4. Print student
-     9. Exit the program
-
-     Enter menu choice: 9
-     ```
-
+**Task 7: Testing**
 1. Run the unit testing program to ensure that your program runs as expected.
 
     ```
@@ -222,8 +91,6 @@ In case it asks you  to configure global variables for an email and name, just c
 When you completed the final Github push, go back into github.com through the browser interface and ensure all your files have been correctly updated.  You should have the following files:
 ```
 main.py
-people.py
-test.txt
 ```
     
 ## Grading
@@ -232,12 +99,6 @@ test.txt
 | Points | Description |
 | --- | --- |
 |50|initial git clone of this repository to your Tuffix machine|
-|5|main.py file submitted and meets the program requirements |
-|10|people.py file submitted and meets the program requirements |
-|5|unit test passes Test01_Person|
-|5|unit test passes Test02_Faculty|
-|5|unit test passes Test03_FacultyInheritsPerson|
-|5|unit test passes Test04_FacultyInheritsStudent|
-|5|unit test passes Test05_Student|
-|5|unit test passes Test06_StudentInheritsPerson|
-|5|unit test passes Test07_StudentInheritsFaculty|
+|10|main.py file submitted and meets the program requirements |
+|20|unit test passes test_vehicle_count|
+|20|unit test passes test_motorcycle_vin|
